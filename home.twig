@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div id="theContent" class="list-group">
+            {% for page in pages %}
+                {%  if page.slug != 'about-me' %}
+                    <a class="list-group-item" href="{{ page.slug }}">
+                    <div>
+                        <div>
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            {{ page.time|date }}
+                        </div>
+                        <div>
+                            {{ page.content|truncate(150)|raw }}
+                        </div>
+                    </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+    </div>
+{% endblock %}

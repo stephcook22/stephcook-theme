@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+{% block title %}{{ slug }}{% endblock %}
+{% block content %}
+    <div id="theContent">
+        <div>
+            <h4>
+                <span class="glyphicon glyphicon-calendar"></span>
+                {{ date|date }}
+            </h4>
+        </div>
+        <div>
+            {{ content | raw }}
+        </div>
+    </div>
+{% endblock %}
