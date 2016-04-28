@@ -5,9 +5,9 @@
     {% block head %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Latest compiled + minified Bootstrap via CDN -->
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ app.request.baseUrl }}/resources/css/stickyfooter.css">
-        <link rel="stylesheet" href="{{ app.request.baseUrl }}/resources/css/stephcook.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ app.request.baseUrl }}/www/web/resources/css/stickyfooter.css">
+        <link rel="stylesheet" href="{{ app.request.baseUrl }}/www/web/resources/css/stephcook.css">
         {% block css %}{% endblock %}
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -18,26 +18,47 @@
     <title>{% block title %}Steph's Bubble{% endblock %}</title>
 </head>
 <body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://stephcook.co.uk/">Steph's Bubble</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ app.request.baseUrl }}/about-me">About me</a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <div id="wrap">
     <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li><a href="{{ app.request.baseUrl }}">Home</a></li>
-                <li><a href="{{ app.request.baseUrl }}/about-me">About me</a></li>
-            </ul>
-            <h3 class="text-muted">Steph's Bubble</h3>
-        </div>
         {% block content %}{% endblock %}
     </div>
 </div>
 <div id="footer">
     <div class="container">
         {% block footer %}
-            &copy; Copyright 2014 by <a href="https://github.com/stephcook22/chula/">Chula</a>.
+            <p>Made with <a href="https://github.com/stephcook22/chula/">Chula</a>.</p>
         {% endblock %}
     </div>
 </div>
 {% block scripts %}
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-25345806-2', 'stephcook.co.uk');
+	  ga('send', 'pageview');
+
+	</script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
